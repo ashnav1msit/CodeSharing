@@ -1,0 +1,15 @@
+<div class="labelHelp" *ngIf="to?.labelHelpText !== undefined">{{ to?.labelHelpText }}</div>
+<div class='file-input-custom' [ngClass]="file.value ? 'fileUploaded' : ''">
+  <div class='uploadFileContainer'>
+    <label [attr.for]="id" class="form-label">
+      <span>{{ to?.uploadTitle ?? "Drag and drop or click to upload" }}</span>
+      <span><i class="icon bi-upload"></i></span>
+    </label>
+  </div>
+  <input #file type="file" [accept]="(to?.extensions ?? []).join(',')" [formControl]="formControl" [formlyAttributes]="field" />
+  <i class="icon bi bi-box-arrow-up-right"></i>
+</div>
+
+<div class="uploadExtension" *ngIf="!file.value">
+  {{ extensionMessage }}
+</div>

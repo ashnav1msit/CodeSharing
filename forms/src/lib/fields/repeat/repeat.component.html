@@ -1,0 +1,35 @@
+<div class="repeat-container">
+  <h6 *ngIf="to.label">
+    {{ to.label }}
+  </h6>
+  <div *ngFor="let field of field.fieldGroup; let i = index" class="repeat-row">
+    <div class="header">
+      <h5>{{ getItemTitle(i + 1) }}</h5>
+      <button
+        *ngIf="to?.controls?.remove?.show !== false"
+        goa-button
+        buttonSize="small"
+        buttonType="tertiary"
+        class="item-remove"
+        type="button"
+        (click)="remove(i)"
+      >
+        {{ to?.controls?.remove?.text ?? 'Remove' }}
+      </button>
+    </div>
+    <div class="content">
+      <formly-field class="col" [field]="field"></formly-field>
+    </div>
+  </div>
+  <button
+    *ngIf="to?.controls?.add?.show !== false"
+    goa-button
+    buttonSize="small"
+    buttonType="secondary"
+    class="repeat-add"
+    type="button"
+    (click)="add()"
+  >
+    {{ to?.controls?.add?.text ?? 'Add' }}
+  </button>
+</div>

@@ -1,0 +1,20 @@
+<div ngClass='dosdonts-container' *ngIf="(doList && doList.length > 0) || (dontList && dontList.length > 0)">
+    <div ngClass='dos' *ngIf="doList && doList.length > 0">
+        <h6 [textContent]="doTitle"></h6>
+        <ul>
+            <li *ngFor="let item of doList">
+                <i class="icon bi-check-lg"></i>
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <div ngClass='donts' *ngIf="dontList && dontList.length > 0">
+        <h6 [textContent]="dontTitle"></h6>
+        <ul>
+            <li *ngFor="let item of dontList">
+                <i class="icon bi-x-lg"></i>
+                {{item}}
+            </li>
+        </ul>
+    </div>
+</div>

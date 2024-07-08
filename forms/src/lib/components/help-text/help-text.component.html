@@ -1,0 +1,25 @@
+<ng-template #header>
+  <div [ngClass]="{expanded}" class="header" (click)="expanded = !expanded">
+    <div class="title" *ngIf="title">{{ title }}</div>
+    <i
+      [ngClass]="{
+        btn: true,
+        'bi-plus-lg': expanded !== true,
+        'bi-dash-lg': expanded === true
+      }"
+    ></i>
+  </div>
+</ng-template>
+
+<ng-template #content>
+  <div class="content-container" [(ngbCollapse)]="!expanded">
+    <div class="content">
+      <ngx-md [textContent]="contents"></ngx-md>
+    </div>
+  </div>
+</ng-template>
+
+<abgov-forms-card
+  [headerTemplate]="header"
+  [contentTemplate]="content"
+></abgov-forms-card>

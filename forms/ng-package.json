@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/libs/abgov/forms",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdModuleIds": {
+      "@ngx-formly/core": "@ngx-formly/core",
+      "@ngx-formly/bootstrap": "@ngx-formly/bootstrap",
+      "@ng-bootstrap/ng-bootstrap": "@ng-bootstrap/ng-bootstrap",
+      "@abgov/angular-components": "@abgov/angular-components",
+      "ngx-md": "ngx-md"
+    }
+  }
+}

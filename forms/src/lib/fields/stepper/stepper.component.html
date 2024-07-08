@@ -1,0 +1,17 @@
+<mat-stepper (selectionChange)="onStepChange($event)" 
+    #stepper
+    [class]="['abforms-stepper', to.className].join(' ')"
+    [disableRipple]="true"
+    [orientation]="to.orientation || 'horizontal'"
+    [labelPosition]="'bottom'"
+    [linear]="to.allowInvalid === false"
+    [selectedIndex]="selectedIndex"
+    >
+    <mat-step *ngFor="let step of steps; let index = index; let last = last;" [stepControl]="step.formControl!" [optional]="false" >
+        <ng-template matStepLabel>{{step.templateOptions?.label}}</ng-template>
+        <formly-field *ngIf="index===selectedIndex" [field]="step"></formly-field>
+    </mat-step>
+    <ng-template matStepperIcon="edit">
+        <i class="bi-pencil-fill" ></i>
+    </ng-template>
+</mat-stepper>

@@ -1,0 +1,14 @@
+<div class="input-group">
+  <input
+    matInput
+    [matDatepicker]="picker"
+    [class.is-invalid]="showError"
+    class="form-control"
+    [formControl]="formControl"
+    [formlyAttributes]="field"
+    placeholder="mm-dd-yyyy"
+    [max]="maxDate"
+  />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</div>

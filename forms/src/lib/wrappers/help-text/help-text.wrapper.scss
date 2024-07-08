@@ -1,0 +1,11 @@
+@import '../../common.scss';
+
+.help-text-container {
+  &.above {
+    margin-bottom: spacing(2);
+  }
+
+  &.below {
+    margin-top: spacing(2);
+  }
+}

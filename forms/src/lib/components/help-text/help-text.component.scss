@@ -1,0 +1,26 @@
+@import '../../common';
+
+.header {
+  @include transition(background-color);
+  cursor: pointer;
+  color: $color-link;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: spacing(0.5, 1.5);
+  font-size: 18px;
+
+  &.expanded {
+    background-color: $color-light-grey;
+    border: 2px solid $color-warning-border;
+  }
+
+  i {
+    color: $color-link;
+  }
+}
+
+.content {
+  padding: spacing(1.5);
+}

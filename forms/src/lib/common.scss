@@ -1,0 +1,155 @@
+@use 'sass:list';
+@use 'sass:map';
+@import '~@abgov/core-css/src/lib/styles/variables/colors';
+@import '~@abgov/core-css/src/lib/styles/variables/typography';
+
+$space-increment: 8px;
+$border-radius: 4px;
+
+$goa-primary-palette: (
+  50: #e0eef8,
+  100: #b3d4ed,
+  200: #80b8e2,
+  300: #4d9bd6,
+  400: #2685cd,
+  // TODO: Create palette using dio colors and lighten?
+  500: $goa-blue,
+  600: #0068be,
+  700: #005db6,
+  800: #0053af,
+  900: #0041a2,
+  A100: #ccddff,
+  A200: #99baff,
+  A400: #6698ff,
+  A700: #4d87ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$goa-error-palette: (
+  10: #fff4f4,
+  50: #fde1e2,
+  100: #f9b4b6,
+  200: #f68285,
+  300: #f24f54,
+  400: #ef2a30,
+  // TODO: Create palette using dio colors and lighten?
+  500: $goa-error-color,
+  600: #ea030a,
+  700: #e70308,
+  800: #e40206,
+  900: #df0103,
+  A100: #ffffff,
+  A200: #ffd3d3,
+  A400: #ffa0a0,
+  A700: #ff8686,
+  contrast: (
+    10: #000000,
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$goa-warn-palette: (
+  50: #fef7e7,
+  100: #fceac2,
+  200: #fadd9a,
+  300: #f8cf71,
+  400: #f7c452,
+  // TODO: Create palette using dio colors and lighten?
+  500: $goa-orange,
+  600: #f4b32f,
+  700: #f2ab27,
+  800: #f0a321,
+  900: #ee9415,
+  A100: #ffffff,
+  A200: #fff6ea,
+  A400: #ffdfb7,
+  A700: #ffd49d,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$color-mid-light-grey: #dcdcdc;
+$color-light-grey: #f1f1f1;
+$color-white: #ffffff;
+$color-warning-border: map.get($goa-warn-palette, 500);
+$color-warning-background: map.get($goa-warn-palette, 50);
+$color-error-border: map.get($goa-error-palette, 500);
+$color-error-background: map.get($goa-error-palette, 10);
+$color-text-heading: #333333;
+$color-primary: map.get($goa-primary-palette, 500);
+$color-shadow: #27292925;
+$color-link: map.get($goa-primary-palette, 500);
+
+// Todo: Ideally this would come from @abgov/core-css
+$goa-success: #00853f;
+
+@mixin shadowed {
+  box-shadow: -2px 2px 5px 1px $color-shadow;
+}
+
+@mixin transition($property: background-color, $duration: 500ms) {
+  transition: $property $duration;
+}
+
+@function spacing($amounts...) {
+  $toReturn: ();
+  @each $amount in $amounts {
+    $toReturn: list.append($toReturn, $amount * $space-increment);
+  }
+  @return $toReturn;
+}
+
+@mixin rounded($amounts...) {
+  $toReturn: ();
+  @each $amount in $amounts {
+    $toReturn: list.append($toReturn, $amount * $border-radius);
+  }
+  border-radius: $toReturn;
+}
+
+@mixin roundedTop($amount) {
+  @include rounded($amount, $amount, 0, 0);
+}

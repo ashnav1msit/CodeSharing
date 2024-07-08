@@ -1,0 +1,44 @@
+@import '../../common';
+
+.dosdonts-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: spacing(4);
+
+  & > :not(:first-child) {
+    margin-left: spacing(4);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0px;
+    .icon {
+      padding: 4px;
+    }
+  }
+
+  .icon {
+    font-size: medium;
+  }
+
+  h6 {
+    margin-bottom: spacing(3);
+    font-weight: 700;
+    line-height: 28px;
+  }
+
+  .dos {
+    h6,
+    .icon {
+      color: $goa-success;
+    }
+  }
+
+  .donts {
+    h6,
+    .icon {
+      color: $goa-error-color;
+    }
+  }
+}

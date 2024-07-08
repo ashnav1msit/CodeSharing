@@ -1,0 +1,15 @@
+@import '../../common';
+
+.page-content {
+  padding: spacing(1, 2);
+
+  // todo > Need to figure out how to expose styles / overrides
+  // todo > To consumer applications.  Leaving in here for now,
+  // todo > But ideally these styles can be set elsewhere / somewhere more central
+  .page-title {
+    font-size: 18px;
+    line-height: 28.8px;
+    font-weight: 700;
+    color: #333333;
+  }
+}

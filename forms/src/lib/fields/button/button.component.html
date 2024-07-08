@@ -1,0 +1,12 @@
+<div *ngIf="to?.text">
+  <button
+    goa-button
+    [buttonType]="to.buttonType ?? 'primary'"
+    [buttonSize]="to.buttonSize ?? 'normal'"
+    [ngClass]="to.buttonStyle ?? ''"
+    class="btn btn-outline-secondary"
+    type="button"
+  >
+    {{ to?.text }}
+  </button>
+</div>

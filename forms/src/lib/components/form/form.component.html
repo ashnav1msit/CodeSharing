@@ -1,0 +1,6 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <formly-form [form]="form" [options]="formOptions" [fields]="config" [model]="model"></formly-form>
+    </form>
+    <pre *ngIf="debug===true" [textContent]="modelString"></pre>
+</div>

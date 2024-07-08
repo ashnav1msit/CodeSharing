@@ -1,0 +1,10 @@
+@import '../../common.scss';
+
+.dos-donts-container {
+  &.above {
+    margin-bottom: spacing(2);
+  }
+  &.below {
+    margin-top: spacing(2);
+  }
+}

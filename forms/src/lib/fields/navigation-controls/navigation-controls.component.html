@@ -1,0 +1,28 @@
+<div class="navigation-controls">
+  <button
+    goa-button
+    buttonType="secondary"
+    buttonSize="small"
+    [routerLink]="[navigation.previousFormRoute$ | async]"
+    [relativeTo]="navigation.parentRoute"
+    [disabled]="(navigation.previousFormRoute$ | async) === undefined"
+    class="btn btn-outline-secondary"
+    type="button"
+  >
+    Back
+  </button>
+  <button
+    goa-button
+    buttonType="primary"
+    buttonSize="small"
+    [routerLink]="[navigation.nextFormRoute$ | async]"
+    [relativeTo]="navigation.parentRoute"
+    [disabled]="
+      (navigation.nextFormRoute$ | async) === undefined ||
+      to?.disableNext === true
+    "
+    type="button"
+  >
+    Next
+  </button>
+</div>

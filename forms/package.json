@@ -1,0 +1,22 @@
+{
+  "name": "@abgov/forms",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@abgov/angular-components": "^1.0.0",
+    "@angular/common": "^11.2.12",
+    "@angular/core": "^11.2.12",
+    "@angular/forms": "^12.1.0",
+    "@angular/material": "^12.2.2",
+    "@angular/router": "^12.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@ngx-formly/bootstrap": "^6.0.0-next.1",
+    "@ngx-formly/core": "^6.0.0-next.1",
+    "bootstrap": "^4.5.0",
+    "bootstrap-icons": "^1.5.0",
+    "ngx-bootstrap-icons": "^1.5.3",
+    "ngx-md": "^12.0.5"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

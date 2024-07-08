@@ -1,0 +1,56 @@
+@import '../../common';
+
+.section:not(:first-child) {
+  margin-top: spacing(1);
+}
+
+.callout-items {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  & > :not(:first-child) {
+    margin-top: spacing(1);
+  }
+}
+
+.items {
+  & > :not(:first-child) {
+    margin-top: spacing(0.5);
+  }
+}
+
+.heading {
+  color: $color-text-heading;
+  margin: spacing(2, 0);
+}
+
+.summary-item {
+  padding: spacing(1);
+
+  .link {
+    padding: spacing(0);
+  }
+
+  .icon {
+    margin: spacing(1);
+  }
+
+  .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .answer {
+    font-weight: bold;
+  }
+
+  &.warning {
+    background-color: $color-warning-background;
+    border: 1px solid $color-warning-border;
+  }
+  &.error {
+    background-color: $color-error-background;
+    border: 1px solid $color-error-border;
+  }
+}

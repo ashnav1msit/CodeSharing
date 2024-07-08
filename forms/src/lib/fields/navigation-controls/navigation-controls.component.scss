@@ -1,0 +1,9 @@
+@import '../../common';
+.navigation-controls {
+  display: flex;
+  flex-direction: row;
+  margin: spacing(2, 0);
+  & :not(:first-child) {
+    margin-left: spacing(1);
+  }
+}

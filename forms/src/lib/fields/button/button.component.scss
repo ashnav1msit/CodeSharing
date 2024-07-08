@@ -1,0 +1,12 @@
+@import '../../common';
+
+.goa-button.btn.danger {
+  color: $goa-error-color;
+  border-color: $color-mid-light-grey;
+
+  &:hover {
+    color: $goa-error-color;
+    border-color: $color-mid-light-grey;
+    opacity: 0.5;
+  }
+}

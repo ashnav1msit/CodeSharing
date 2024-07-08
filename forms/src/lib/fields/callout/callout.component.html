@@ -1,0 +1,5 @@
+<div class="calloutBox-container">
+  <goa-callout [title]="to?.title ?? ''" [type]="to?.type ?? 'important'">
+    <ngx-md [textContent]="to?.content ?? ''" *ngIf="!!to?.content"></ngx-md>
+  </goa-callout>
+</div>

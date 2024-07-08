@@ -1,0 +1,36 @@
+
+
+
+
+<div class="summary">
+    <goa-callout [title]="to.callout?.title ?? ''" *ngIf="invalidFields.length > 0 && to.callout?.show === true" [type]="to.invalidAsWarnings ? 'important' : 'emergency'">
+        <ngx-md [data]="to.callout?.contents ?? ''" *ngIf="!!to.callout?.contents"></ngx-md>
+        <ul class='callout-items'>
+            <li *ngFor="let item of invalidFields">
+                <a [routerLink]="item.route" [relativeTo]="route.parent" >{{item.label}}</a>
+            </li> 
+        </ul>
+    </goa-callout>
+    <div class="section" *ngFor="let sectionSummary of items; let index = index; let last = last;">
+        <abgov-forms-card *ngIf="sectionSummary.items.length > 0" [noPadding]="true" [title]="to.showCardTitle ? sectionSummary.section?.templateOptions?.label : undefined">
+            <div class="items" >
+                <div [ngClass]="{
+                        'summary-item':true,
+                        'warning':item.valid === false && to.invalidAsWarnings === true ,
+                        'error':item.valid === false && to.invalidAsWarnings !== true
+                    }" *ngFor="let item of sectionSummary.items; let index = index; let last = last;">
+                    <div class="title">
+                        <i *ngIf="item.valid === false" [ngClass]="{
+                            'icon':true,
+                            'bi':true,
+                            'bi-exclamation-circle':to.invalidAsWarnings===true,
+                            'bi-exclamation-triangle': to.invalidAsWarnings !== true
+                        }"></i>
+                        <button type="button" class="link btn btn-link" [routerLink]="item.route" [relativeTo]="route.parent">{{item.label}}</button>
+                    </div>    
+                    <div *ngIf="item.value !== undefined" class="answer">{{item.value}}</div>
+                </div>
+            </div>
+        </abgov-forms-card>
+    </div>
+</div>

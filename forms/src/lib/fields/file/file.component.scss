@@ -1,0 +1,88 @@
+@import '../../common';
+
+.labelHelp {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  padding-left: 4px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.file-input-custom {
+  .uploadFileContainer {
+    background-color: #F2F8FC;
+    border: 1px solid $goa-blue;
+    border-style: dotted;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: -35px;
+
+    label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      color: #0070C4;
+      width: 100%;
+      padding: spacing(4,2);
+      margin-bottom: spacing(0);
+
+      span {
+        display:inline-block;
+        text-align: left;
+        padding-right: spacing(1);
+        max-width: 155px;
+        font-size: 18px;
+
+        i {
+          font-size: 24px;
+
+          &::before {
+            font-weight: bold !important;
+          }
+        }
+
+        &:last-child {
+          position: absolute;
+          top: 38%;
+        }
+      }
+    }
+  }
+
+  input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  input, input + i {
+    color: transparent;
+  }
+
+  &.fileUploaded {
+    .uploadFileContainer {
+      display: none;
+    }
+
+    input {
+      color: #0070C4;
+      margin-left: -115px;
+      text-decoration: underline;
+
+      & + i {
+        color: #0070C4;
+        padding-left: spacing(1);
+
+        &::before {
+          font-weight: bold !important;
+        }
+      }
+    }
+  }
+}
+
+.uploadExtension {
+  font-size: 14px;
+  color: #6c757d;
+  margin-top: spacing(1);
+}

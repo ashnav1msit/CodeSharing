@@ -1,0 +1,6 @@
+@import '../../common.scss';
+
+// Add some space on the bottom of form fields
+:host abgov-forms-form-field ::ng-deep .form-field {
+  margin-bottom: spacing(2);
+}

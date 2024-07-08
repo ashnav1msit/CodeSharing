@@ -1,0 +1,66 @@
+@import '../../common.scss';
+
+.abforms-stepper {
+  width: 100%;
+
+  & ::ng-deep .mat-stepper-horizontal-line,
+  & ::ng-deep .mat-horizontal-stepper-header::after,
+  & ::ng-deep .mat-horizontal-stepper-header::before {
+    border-color: $color-primary;
+    border-top-width: 4px !important;
+    width: calc(50% - 15px) !important;
+    margin-top: 2px;
+  }
+
+  & ::ng-deep .mat-stepper-vertical-line::before,
+  & ::ng-deep .mat-vertical-stepper-header::after,
+  & ::ng-deep .mat-vertical-stepper-header::before {
+    border-color: $color-primary;
+    border-left-width: 4px !important;
+    left: 2px !important;
+    top: -20px !important;
+    bottom: -20px !important;
+  }
+
+  & ::ng-deep .mat-step-icon,
+  & ::ng-deep .mat-step-icon {
+    background: $color-primary;
+    border: 4px solid $color-primary;
+    box-sizing: content-box;
+  }
+  & ::ng-deep .mat-step-icon-selected {
+    background: $color-white;
+    color: $color-primary;
+  }
+
+  ::ng-deep .mat-horizontal-stepper-header-container {
+    background-color: $color-light-grey;
+    display: flex;
+    flex-direction: row;
+    padding: 0 max(20px, 5%);
+    padding-top: 10px;
+  }
+
+  ::ng-deep .mat-step-label {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  ::ng-deep .mat-step-label-selected {
+    font-weight: 600;
+  }
+
+  & ::ng-deep .mat-horizontal-stepper-header {
+    & .mat-step-label {
+      overflow: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    & .mat-step-text-label {
+      white-space: break-spaces;
+      text-overflow: unset;
+      overflow: visible;
+    }
+  }
+}

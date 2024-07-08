@@ -1,0 +1,9 @@
+<div [class]="['page',to.className].join('')" >
+    <mat-progress-bar *ngIf="to?.showProgress!==false" [value]="progress$|async" ></mat-progress-bar>
+    <div class='page-content-container'>
+        <div class='page-content'>
+            <h6 *ngIf="(currentPage$|async)?.templateOptions?.page?.title" class='page-title'  >{{ (currentPage$|async)?.templateOptions?.page?.title }}</h6>
+            <formly-field *ngIf="(currentPage$|async)!==null" [field]="(currentPage$|async) ?? {}"></formly-field>
+        </div>
+    </div>
+</div>

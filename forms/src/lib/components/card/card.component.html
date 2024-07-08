@@ -1,0 +1,20 @@
+<div class="card">
+  <ng-container
+    *ngTemplateOutlet="headerTemplate ? headerTemplate : defaultHeader"
+  ></ng-container>
+  <ng-container
+    *ngTemplateOutlet="contentTemplate ? contentTemplate : defaultContent"
+  ></ng-container>
+</div>
+
+<ng-template #defaultHeader>
+  <div *ngIf="title" class="header">
+    <div class="title" *ngIf="title">{{ title }}</div>
+  </div>
+</ng-template>
+
+<ng-template #defaultContent>
+  <div [ngClass]="{ content: true, 'no-padding': noPadding }">
+    <ng-content></ng-content>
+  </div>
+</ng-template>

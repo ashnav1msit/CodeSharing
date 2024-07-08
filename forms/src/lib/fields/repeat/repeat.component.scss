@@ -1,0 +1,33 @@
+@import '../../common';
+
+.repeat-container {
+  padding-top: spacing(2);
+
+  .repeat-row {
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: spacing(2);
+    margin-bottom: spacing(2);
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .item-remove {
+        min-width: 0px;
+        color: $goa-error-color;
+        margin: 0;
+      }
+    }
+  }
+
+  .repeat-add {
+    margin-top: 0px;
+  }
+  h6 {
+    font-weight: bold;
+  }
+}

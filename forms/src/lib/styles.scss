@@ -1,0 +1,23 @@
+@use '~@angular/material' as mat;
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+@import './common.scss';
+
+@include mat.core();
+
+$goa-primary: mat.define-palette($goa-primary-palette, 500);
+$goa-error: mat.define-palette($goa-error-palette, 500);
+$goa-warn: mat.define-palette($goa-warn-palette, 500);
+
+$goa-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $goa-primary,
+      accent: $goa-primary,
+      error: $goa-error,
+      warning: $goa-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($goa-theme);

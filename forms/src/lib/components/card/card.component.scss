@@ -1,0 +1,31 @@
+@import '../../common';
+
+.card {
+  @include roundedTop(1);
+  border: 1px solid $color-mid-light-grey;
+}
+
+.header {
+  background-color: $color-light-grey;
+  padding: spacing(1.5, 0, 1, 2);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  &.clickable {
+    cursor: pointer;
+  }
+  .title {
+    flex: 1;
+    font-size: 20px;
+    color: $color-text-heading;
+  }
+}
+
+.content {
+  padding: spacing(1);
+  // border: 1px solid $color-mid-light-grey;
+  // border-top: none;
+  &.no-padding {
+    padding: 0;
+  }
+}
